@@ -12,4 +12,16 @@
  * @returns {boolean} - deberia retornar true o false.
  */
 
-function validAnagram(first, second) {}
+function validAnagram(first, second) {
+    if (first.length !== second.length) {
+        return false;
+    }
+    const firstChar = first.split('').sort().join('');
+    const secondChar = second.split('').sort().join('');
+
+    return firstChar === secondChar;
+}
+
+validAnagram('cinema', 'iceman');
+validAnagram('listen', 'silent');
+validAnagram('a', 'b');
